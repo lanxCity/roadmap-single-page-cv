@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: aqua;
+        height: 100vh;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+      }
+      header {
+        background-color: rgba(255, 0, 0, 0.521);
+        color: #fff;
+        padding: 2rem;
+        grid-row: 1/-1;
+        grid-column: 1/-1;
+        z-index: 999;
+        height: 50px;
+      }
+      main {
+        background: #0000008a url(../../../images/AEESS.jpg) no-repeat center
+          center/cover;
+        background-blend-mode: multiply;
+        color: #fff;
+        grid-column: 1 / -1;
+        grid-row: 1/-1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>This is header</header>
+    <main>
+      This is main element. Lorem ipsum dolor sit amet consectetur, adipisicing
+      elit. Inventore nihil, aspernatur a necessitatibus soluta eaque labore
+      perspiciatis. Esse error itaque beatae unde sed hic rem alias illum ut
+      accusantium magni aspernatur quia accusamus aperiam nobis aliquid,
+      perferendis dicta placeat natus porro recusandae vitae provident
+      quibusdam. Commodi aperiam est facilis cupiditate in quia, veritatis
+      voluptatem modi. Ratione, odio optio ullam molestias autem vitae at!
+      Sapiente alias atque quas a neque, fugiat nisi distinctio nihil animi
+      voluptatem veniam provident, placeat reiciendis blanditiis ab hic
+      voluptatibus quam totam praesentium magnam! Iusto sint iste, aliquid
+      minima at est saepe ullam consequuntur eveniet repellendus maiores?
+    </main>
+  </body>
+</html>

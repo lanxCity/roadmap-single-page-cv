@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <h1>CASIO</h1>
+      <div class="">
+        <input type="text" id="screen" value="WELCOME" readonly />
+        <section class="buttons">
+          <div class="control">
+            <button class="power">ON/OFF</button>
+            <button class="clr">CLEAR</button>
+          </div>
+          <div class="others">
+            <button class="op btn">^</button>
+            <button class="op btn">sqrt</button>
+            <button class="op btn">(</button><button class="op btn">)</button>
+            <button class="del">Del</button>
+          </div>
+          <div class="main">
+            <div class="digits">
+              <button class="digit btn">9</button
+              ><button class="digit btn">8</button
+              ><button class="digit btn">7</button
+              ><button class="digit btn">6</button
+              ><button class="digit btn">5</button
+              ><button class="digit btn">4</button
+              ><button class="digit btn">3</button
+              ><button class="digit btn">2</button
+              ><button class="digit btn">1</button>
+              <button class="digit btn">0</button>
+              <button class="dot btn">.</button>
+              <button class="equal">=</button>
+            </div>
+            <div class="ops">
+              <button class="op btn">+</button>
+              <button class="op btn">-</button>
+              <button class="op btn">x</button>
+              <button class="op btn">/</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <style>
+      /* Reset */
+
+      html {
+        font-size: 16px;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #333;
+      }
+
+      input,
+      button {
+        outline: none;
+        font-size: 1.5rem;
+        line-height: 1.5;
+      }
+      button {
+        cursor: pointer;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* main */
+      .calculator {
+        background-color: #000;
+        color: #f4f4f4;
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        width: clamp(400px, 50vw, 600px);
+        min-height: 80vh;
+        display: grid;
+        align-items: center;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      #screen {
+        width: 100%;
+        height: 150px;
+        background-color: #f4f4f4;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+        font-size: 2.5rem;
+      }
+
+      section.buttons,
+      .digits,
+      .ops {
+        display: grid;
+        gap: 20px;
+      }
+
+      section.buttons {
+        margin: 30px 0;
+      }
+
+      .control {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .control button {
+        font-size: 1.2rem;
+        padding: 10px;
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+      }
+
+      .control .power {
+        background-color: rgba(255, 0, 0, 0.849);
+        color: #fff;
+        border: 3px solid greenyellow;
+      }
+
+      .control .clr {
+        background-color: rgb(255, 255, 0);
+      }
+
+      .others {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 10px;
+      }
+
+      .others button {
+        padding: 0 20px;
+        border-radius: 50%;
+      }
+
+      .others .del {
+        background-color: brown;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-flow: column;
+        gap: 30px;
+      }
+
+      .digits {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ops {
+        align-items: start;
+      }
+
+      .ops button {
+        padding: 5px 10px;
+      }
+
+      .op:hover,
+      .digit:hover,
+      .dot:hover,
+      .equal:hover {
+        background-color: aquamarine;
+      }
+    </style>
+
+    <script>
+      const screen = document.getElementById("screen");
+      const buttons = document.querySelectorAll("button");
+      const powerButton = document.querySelector(".power");
+      const clearButton = document.querySelector(".clr");
+      const delButton = document.querySelector(".del");
+
+      let isOn = true;
+
+      setTimeout(() => {
+        screen.value = "";
+        screen.focus();
+        startCalculator();
+      }, 5000);
+
+      function startCalculator() {
+        powerButton.addEventListener("click", () => {
+          isOn = !isOn;
+
+          if (!isOn) screen.value = "";
+
+          msg = "Calculator is powered ";
+          msg += isOn ? "ON" : "OFF";
+          alert(msg + "!");
+          console.log("Power button clicked. Is calculator on?", isOn);
+        });
+
+        // clear functionality
+        clearButton.addEventListener("click", () => {
+          if (isOn) screen.value = "";
+        });
+
+        // delete functionality
+        delButton.addEventListener("click", () => {
+          if (isOn) {
+            let value = screen.value;
+            screen.value = value.substr(0, value.length - 1);
+          }
+        });
+
+        // Power functionality of calculator
+        buttons.forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const button = e.target;
+            const buttonClassList = button.className.split(" ");
+
+            if (!isOn && !buttonClassList.includes("power")) {
+              alert("Calculator is off");
+              return;
+            }
+
+            if (buttonClassList.includes("btn")) {
+              screen.value += button.innerText.replace("sqrt", "sqrt(");
+            }
+
+            if (buttonClassList.includes("equal")) {
+              let expression = screen.value
+                .replace(/x/g, "*")
+                .replace(/\^/g, "**") // "\" is used to escape the "^" character in regex
+                .replace(/sqrt/g, "Math.sqrt");
+
+              console.log(expression);
+              try {
+                if (expression) {
+                  console.log(expression);
+                  let answer = eval(expression);
+                  screen.value = answer;
+                }
+              } catch {
+                screen.value = "ERROR";
+                setTimeout(() => (screen.value = ""), 3000);
+              }
+            }
+          }); //event
+        }); // foreach
+
+        // end startCalculator
+      }
+
+      // buttons.forEach((button) => {
+      //   button.addEventListener("click", (e) => {
+      //     if (!isOn) return;
+      //     const value = e.target.innerText;
+      //     if (value === "&equals;") {
+      //       try {
+      //         screen.value = eval(screen.value.replace(/&times;/g, "*").replace(/&divide;/g, "/"));
+      //       } catch (error) {
+      //         screen.value = "Error";
+      //       }
+      //     } else if (value === "CLEAR") {
+      //       screen.value = "";
+      //     } else if (value === "ON/OFF") {
+      //       isOn = !isOn;
+      //       screen.value = isOn ? "" : "OFF";
+      //     } else {
+      //       screen.value += value;
+      //     }
+      //   });
+      // });
+    </script>
+  </body>
+</html>

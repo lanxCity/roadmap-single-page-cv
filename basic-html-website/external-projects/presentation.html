@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Presentation</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      body {
+        background-color: aliceblue;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.5;
+        transition: all 0.5s;
+      }
+
+      .container {
+        padding: 2rem;
+        position: relative;
+        display: flex;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      .line {
+        background-color: rgb(0, 183, 255);
+        width: 30px;
+        border-radius: 20px;
+      }
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+      }
+
+      li {
+        position: relative;
+        padding: 20px 20px 10px 38px;
+        transition: all 0.5s;
+      }
+
+      li span {
+        position: absolute;
+        left: 0;
+        top: 20px;
+        transform: translateX(-20px);
+        background-color: rgb(0, 183, 255);
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      p {
+        background-color: rgb(0, 183, 255);
+        padding: 1rem;
+      }
+
+      p::before {
+        content: "";
+        border: 5px solid rgb(0, 183, 255);
+        border-right-width: 30px;
+        position: absolute;
+        top: 30px;
+        left: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="line"></div>
+      <ul>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+            atque nesciunt exercitationem dolorum autem assumenda temporibus
+            consectetur maxime enim eaque.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            aspernatur non possimus alias tempora porro atque cum facere
+            inventore, amet corrupti quasi ipsam cumque minima aliquam
+            doloremque architecto adipisci dolores.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            aspernatur non possimus alias tempora porro atque cum facere
+            inventore, amet corrupti quasi ipsam cumque minima aliquam
+            doloremque architecto adipisci dolores.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
+            aspernatur non possimus alias tempora porro atque cum facere
+            inventore, amet corrupti quasi ipsam cumque minima aliquam
+            doloremque architecto adipisci dolores.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+            dolorem asperiores qui in nihil odit.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci ea
+            eveniet non, dicta sapiente sunt, repellat vitae ipsa rem unde
+            deleniti sed itaque tempore consequuntur repellendus corporis eaque
+            officiis! Eveniet.
+          </p>
+        </li>
+        <li>
+          <span></span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore
+            laboriosam blanditiis impedit aperiam eaque rem?
+          </p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

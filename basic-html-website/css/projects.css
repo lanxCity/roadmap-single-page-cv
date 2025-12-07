@@ -1,0 +1,144 @@
+.projects {
+    grid-row: 1 /-1;
+    grid-column: 1/-1;
+    background: #121212cd url("https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg") no-repeat center center/cover;
+    background-blend-mode: overlay;
+    overflow: auto;
+    color: aliceblue;
+}
+
+.projects .container {
+    padding: 0 1rem 2rem;
+    margin-top: 150px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5rem;
+
+}
+
+.projects h1 {
+    font-size: 2.7rem;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px 25px #00c9c9d6;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.projects h1 .name {
+    display: flex;
+    align-items: center;
+}
+
+.projects h1 .big {
+    transform: scale(1.5) rotate(-10deg) translateY(-5%);
+    color: rgb(148, 20, 20);
+}
+
+.projects h1>span:last-child {
+    border-bottom: 5px solid #00c9c997;
+}
+
+.project-list {
+    border: 1px solid #00c9c997;
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    box-shadow: 5px 5px 25px #602323;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.project-list .line {
+    width: 100%;
+    height: 1px;
+    background-color: rgb(17, 102, 123);
+}
+
+.project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.project-item h2 {
+    border: 1px dotted #00c9c9d6;
+    padding: 1rem;
+    letter-spacing: 2px;
+}
+
+.project-description {
+    border-left: 2px solid #0090c960;
+    box-shadow: 2px 2px 15px #462121e0;
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.project-title-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.project-title-wrapper .arrow {
+    display: inline-block;
+    border: 30px solid transparent;
+    border-left-color: #00c9c997;
+}
+
+.project-item div:last-child {
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 10px inset #0090c960;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+}
+
+.project-item div:last-child:hover .overlay {
+    transform: translate(0, 0);
+}
+
+iframe {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    width: 100%;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.overlay {
+    grid-row: 1/-1;
+    grid-column: 1/-1;
+    background-color: #12121272;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-200%, -200%);
+    transition: all .5s ease-in-out;
+}
+
+.overlay a {
+    color: #00c9c9;
+    width: fit-content;
+    padding: 1rem 3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    background-color: #ffffffd9;
+    border-radius: 10px;
+    justify-self: center;
+    transition: all .3s ease;
+}
+
+.overlay a:hover {
+    background-color: #00c9c997;
+    color: #fff;
+    border: 1px solid #fff;
+}

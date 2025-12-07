@@ -1,0 +1,228 @@
+main {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  background: #121212cd url("https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg") no-repeat center center/cover;
+  background-blend-mode: overlay;
+  padding: 0 2rem;
+  overflow: auto;
+  color: aliceblue;
+}
+
+main .container {
+  width: 100%;
+  margin-top: 150px;
+}
+
+.section-intro {
+  box-shadow: 5px 5px 25px #00c9c9d6;
+  padding: 1rem;
+}
+
+.section-intro .brief {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-intro .brief div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-intro .photo {
+  width: calc(100% - .5rem);
+  max-width: 360px;
+  height: 240px;
+  background: #0000006a url(../../../../images/photo.jpg) top center/cover no-repeat;
+  background-blend-mode: darken;
+  border: 2px solid #00c9c950;
+  border-radius: 5px;
+  margin-bottom: 1.5rem;
+  transition: all .3s ease;
+}
+
+.section-intro .photo:hover {
+  background-blend-mode: normal;
+  transform: scale(1.1);
+  box-shadow: 0 2px 20px #0090c970;
+}
+
+.section-intro h4 {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.section-intro h4 span {
+  color: #00c9c9d6
+}
+
+.section-intro .nickname {
+  font-size: .9rem;
+  font-style: italic;
+  opacity: .5;
+  transition: all .3s ease;
+  padding: 1rem;
+}
+
+.section-intro .photo:hover~.nickname {
+  opacity: 1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px #342e2ee9;
+}
+
+.section-intro .media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.section-intro .media a {
+  color: #00c9c9d6;
+  font-size: 2rem;
+  margin: 0 1rem;
+  transition: all .3s ease;
+}
+
+.section-intro .media a:hover {
+  color: #0090c9e6;
+  transform: scale(1.2);
+}
+
+.section-intro .brief-line {
+  width: 100%;
+  height: 2px;
+  background-color: #0090c970;
+  margin: 1rem 0 .5rem;
+}
+
+.brief-content {
+  text-align: right;
+  font-style: oblique;
+  color: #d7deded6;
+  max-width: 600px;
+  display: flex;
+  align-self: center;
+}
+
+.skill {
+  margin: 0 0 3rem;
+}
+
+.title {
+  position: relative;
+}
+
+.title-line {
+  width: 5px;
+  height: 100%;
+  background-color: #0090c970;
+  ;
+  position: absolute;
+  top: 0;
+
+}
+
+.section-skills h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 5rem 0 3rem;
+  letter-spacing: 1.5px;
+}
+
+.section-skills h2::before {
+  content: "";
+  width: 50%;
+  height: 5px;
+  background-color: #0090c970;
+  position: absolute;
+  left: 5px;
+  bottom: 0;
+}
+
+.card {
+  padding: 2rem 0;
+  box-shadow: 0 2px 5px #00c9c950;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #00c9c9d6;
+  margin-bottom: .5rem;
+}
+
+.card .range {
+  width: 100%;
+  height: 30px;
+  background-color: #0090c970;
+  border-radius: 10px;
+  position: relative;
+}
+
+.card .range span:first-child {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background-color: #00c9c9d6;
+  border-radius: 10px;
+}
+
+.card .range .value {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.card.html .range span:first-child {
+  width: 97%;
+}
+
+.card.css .range span:first-child {
+  width: 75%;
+}
+
+.card.js .range span:first-child {
+  width: 75%;
+}
+
+.card.py .range span:first-child {
+  width: 85%;
+}
+
+.card.django .range span:first-child {
+  width: 55%;
+}
+
+.card.fastapi .range span:first-child {
+  width: 30%;
+}
+
+@media screen and (min-width: 1000px) {
+  .section-intro .brief {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    position: relative;
+  }
+
+
+  .section-intro .brief-line {
+    display: none;
+  }
+
+  .brief-content {
+    text-align: justify;
+    color: #ddd;
+    display: block;
+    border-left: 2px solid #0090c960;
+    padding-left: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 15px #000000e0;
+  }
+}

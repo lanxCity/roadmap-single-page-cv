@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lanxCity | Projects</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/projects.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <a href="./index.html">
+          <img
+            src="../../../images/lanx-icon.jpg"
+            alt="lanxCity Logo"
+            id="logo"
+          />
+        </a>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./projects.html" id="current">Projects</a></li>
+        </ul>
+        <div class="hamburger">
+          <input type="checkbox" name="menu" id="menu-toggle" />
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
+      </div>
+    </nav>
+    <main class="projects">
+      <div class="container">
+        <h1>
+          <span class="name">
+            <span class="green">L</span>an<span class="big">x</span>
+          </span>
+          <span>Projects</span>
+        </h1>
+        <div class="project-list">
+          <div class="project-item">
+            <div class="project-title-wrapper">
+              <span class="arrow"></span>
+              <h2 class="project-title">Presentation</h2>
+            </div>
+            <p class="project-description">
+              A brief description of Project One. This project focuses on
+              community development and sustainability.
+            </p>
+            <div>
+              <iframe
+                src="./external-projects/presentation.html"
+                frameborder="0"
+              ></iframe>
+              <div class="overlay">
+                <a href="./external-projects/presentation.html" target="_blank"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="line"></div>
+          <div class="project-item">
+            <div class="project-title-wrapper">
+              <span class="arrow"></span>
+              <h2 class="project-title">Calculator</h2>
+            </div>
+            <p class="project-description">
+              A brief description of Project Two. This project aims to improve
+              local infrastructure and services.
+            </p>
+            <div>
+              <iframe
+                src="./external-projects/calculator.html"
+                frameborder="0"
+              ></iframe>
+              <div class="overlay">
+                <a href="./external-projects/calculator.html" target="_blank"
+                  >View</a
+                >
+              </div>
+            </div>
+          </div>
+          <!-- <div class="project-item">
+            <img
+              src="../../../images/project3.jpg"
+              alt="Project 3"
+              class="project-image"
+            />
+            <h2 class="project-title">Project Three</h2>
+            <p class="project-description">
+              A brief description of Project Three. This project is dedicated to
+              environmental conservation and awareness.
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
